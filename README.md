@@ -1,5 +1,7 @@
 # Role Rails [![Build Status](https://travis-ci.org/razum2um/role-rails.png?branch=master)](https://travis-ci.org/razum2um/role-rails)
 
+Fork uses `data-role` instead of `role`.
+
 Rails adapter for [Role.js](https://github.com/kossnocorp/role)
 
 ## Usage
@@ -7,12 +9,12 @@ Rails adapter for [Role.js](https://github.com/kossnocorp/role)
 ### Basic usage
 
 ``` html
-<div role='button'></div>
+<div data-role="button"></div>
 ```
 
 ``` js
 $('@button');
-//=> <div role='button'></div>
+//=> <div data-role="button"></div>
 ```
 
 For more information, read [role.js's README](https://github.com/kossnocorp/role/blob/master/README.md).
@@ -32,7 +34,7 @@ For this example:
 ... output will be like:
 
 ``` html
-<div role="behaviour">Trololo</div>
+<div data-role="behaviour">Trololo</div>
 ```
 
 You can also combine other shortcuts in any order you want:

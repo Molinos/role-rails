@@ -5,7 +5,7 @@
     if (!original) return;
 
     context[name] = function(){
-      arguments[argPos] = arguments[argPos].replace(/@([\w\u00c0-\uFFFF\-]+)/g, '[role~="$1"]');
+      arguments[argPos] = arguments[argPos].replace(/@([\w\u00c0-\uFFFF\-]+)/g, '[data-role~="$1"]');
       return original.apply(context, arguments);
     };
 
@@ -30,7 +30,7 @@
   };
 
   $.extend($.fn, {
-    roles: function(){ return parse(this.attr('role')); },
+    roles: function(){ return parse(this.attr('data-role')); },
 
     hasRole: function(roleName){
       var roles = parse(roleName);
@@ -45,7 +45,7 @@
 
       return this.each(function(_, element){
         var $el = $(element);
-        $el.attr('role', parse($el.attr('role') + ' ' + roleName).join(' '));
+        $el.attr('data-role', parse($el.attr('data-role') + ' ' + roleName).join(' '));
       });
     },
 
@@ -54,7 +54,7 @@
 
       return this.each(function(_, element){
         var $el = $(element);
-        $el.attr('role', parse($el.attr('role'), parse(roleName)).join(' '));
+        $el.attr('data-role', parse($el.attr('data-role'), parse(roleName)).join(' '));
       });
     },
 

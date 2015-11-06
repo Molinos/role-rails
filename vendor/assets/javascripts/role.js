@@ -3,7 +3,7 @@
     var original;
     if (klass && (original = klass.prototype[methodName])) {
       klass.prototype[methodName] = function(){
-        arguments[0] = arguments[0].replace(/@([\w\u00c0-\uFFFF\-]+)/g, '[role~="$1"]');
+        arguments[0] = arguments[0].replace(/@([\w\u00c0-\uFFFF\-]+)/g, '[data-role~="$1"]');
         return original.apply(this, arguments);
       };
     }
